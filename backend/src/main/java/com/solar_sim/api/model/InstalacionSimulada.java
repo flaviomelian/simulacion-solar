@@ -42,4 +42,18 @@ public class InstalacionSimulada {
 
     @Schema(description = "Fecha de creación de la instalación")
     private LocalDateTime fechaCreacion;
+
+    @Schema(description = "Fecha de última modificación de la instalación")
+    private LocalDateTime fechaModificacion;
+
+    @PrePersist
+    protected void onCreate() {
+        this.fechaCreacion = LocalDateTime.now();
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        this.fechaModificacion = LocalDateTime.now();
+    }
+   
 }

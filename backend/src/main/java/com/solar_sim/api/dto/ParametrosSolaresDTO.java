@@ -1,12 +1,16 @@
 // ParametrosSolaresDTO.java
 package com.solar_sim.api.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.util.List;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 @Schema(name = "ParametrosSolaresDTO", description = "DTO de salida de la estimación solar")
 public class ParametrosSolaresDTO {

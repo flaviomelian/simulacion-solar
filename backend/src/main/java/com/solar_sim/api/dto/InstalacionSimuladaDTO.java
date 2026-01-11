@@ -1,10 +1,14 @@
 package com.solar_sim.api.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 @Schema(name = "InstalacionSimuladaDTO", description = "DTO para crear o actualizar una instalación simulada")
 public class InstalacionSimuladaDTO {
