@@ -3,6 +3,8 @@ package com.solar_sim.api.model;
 import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDateTime;
+import java.util.List;
+
 import io.swagger.v3.oas.annotations.media.Schema;
 
 @Schema(name = "InstalacionSimulada", description = "Entidad que representa una instalación fotovoltaica simulada")
@@ -39,6 +41,9 @@ public class InstalacionSimulada {
 
     @Schema(description = "Eficiencia global de la instalación (0-1)", example = "0.18")
     private Double eficiencia;
+
+    @OneToMany(mappedBy = "instalacion", cascade = CascadeType.ALL)
+    private List<PlacaFotovoltaica> placas;
 
     @Schema(description = "Fecha de creación de la instalación")
     private LocalDateTime fechaCreacion;
