@@ -15,6 +15,8 @@ public class PlacaFotovoltaica {
     private Double potenciaWp;
     private Double eficiencia;
     private Double area;
+    private Double inclinacion;
+    private String tipo;
     @ManyToOne
     private InstalacionSimulada instalacion;
 }

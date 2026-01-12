@@ -1,5 +1,6 @@
 package com.solar_sim.api.controller;
 
+import com.solar_sim.api.dto.PlacaFotovoltaicaDTO;
 import com.solar_sim.api.model.PlacaFotovoltaica;
 import com.solar_sim.api.service.PlacaFotovoltaicaService;
 import lombok.RequiredArgsConstructor;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/panels")
 @RequiredArgsConstructor
 public class PlacaFotovoltaicaController {
@@ -17,15 +19,15 @@ public class PlacaFotovoltaicaController {
     private final PlacaFotovoltaicaService service;
 
     @GetMapping
-    public List<PlacaFotovoltaica> getAll() {
-        return service.getAll();
+    public List<PlacaFotovoltaicaDTO> getAll() {
+        return service.getAllDTO();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<PlacaFotovoltaica> getById(@PathVariable Long id) {
-        return service.getById(id)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+    public ResponseEntity<PlacaFotovoltaicaDTO> getById(@PathVariable Long id) {
+        PlacaFotovoltaicaDTO dto = service.getByIdDTO(id);
+        if (dto == null) return ResponseEntity.notFound().build();
+        return ResponseEntity.ok(dto);
     }
 
     @PostMapping

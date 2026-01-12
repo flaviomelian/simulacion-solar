@@ -9,6 +9,7 @@ import com.solar_sim.api.dto.ParametrosSolaresDTO;
 import com.solar_sim.api.model.ParametrosSolares;
 import com.solar_sim.api.service.ParametrosSolaresService;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/solar/estimate")
 @RequiredArgsConstructor

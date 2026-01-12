@@ -3,8 +3,8 @@ import { Cpu, SolarPanel } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="flex items-center justify-center bg-zinc-50 font-sans dark:bg-black rounded-2xl">
-      <main className="flex w-full max-w-3xl flex-row items-center justify-between py-18 bg-white dark:bg-black sm:items-start">
+    <div className="flex items-center justify-center bg-zinc-50 font-sans dark:bg-gray-950 rounded-2xl">
+      <main className="flex w-full max-w-3xl flex-row items-center justify-between py-18 bg-white dark:bg-gray-950 sm:items-start">
         <div className="flex flex-col mb-10">
           {/* Bloque fotovoltaico */}
           <div className="max-w-xl text-center sm:text-left">
@@ -32,7 +32,7 @@ export default function Home() {
               parámetros afectan la eficiencia. Todo está diseñado para ser
               intuitivo y rápido, usando{" "}
               <strong>Spring Boot en el backend</strong> y
-              <strong>Next.js con Tailwind</strong> en el frontend.
+              <strong> Next.js con Tailwind</strong> en el frontend.
             </p>
           </div>
         </div>
