@@ -9,9 +9,9 @@ interface Props {
 
 const VerticalPanel = ({ peakHeight, sunPos }: Props) => {
   const [tilt, setTilt] = useState(45);
-  const size = 300;
+  const size = 310;
   const panelHeight = 260;
-  const numRays = 15;
+  const numRays = 12;
 
   // Calculamos el ángulo y longitud de los rayos según sunPos y peakHeight
   const t = sunPos / 100;
@@ -48,7 +48,7 @@ const VerticalPanel = ({ peakHeight, sunPos }: Props) => {
         <svg
           width={size}
           height={size - 100}
-          className="absolute top-0 left-0 pointer-events-none"
+          className="absolute top-5 left-5 pointer-events-none"
           style={{
             transform: `rotate(${180 * (t < 0.5 ? t : (1 - t)) - 90}deg)`, // t = posición del sol 0-1
             transformOrigin: `${size / 2}px ${size / 2 + 10}px`, // eje de rotación
@@ -92,14 +92,14 @@ const VerticalPanel = ({ peakHeight, sunPos }: Props) => {
       {/* Slider de inclinación */}
       <div className="flex flex-col items-center gap-2 w-64">
         <label className="text-sm text-zinc-600 dark:text-zinc-400">
-          Inclinación del panel: {tilt}°
+          Inclinación del panel: {90 - tilt}°
         </label>
         <input
           type="range"
           min={0}
           max={90}
-          value={90 - tilt}
-          onChange={(e) => setTilt(90 - Number(e.target.value))}
+          value={tilt}
+          onChange={(e) => setTilt(Number(e.target.value))}
           className="w-full"
         />
       </div>

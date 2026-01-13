@@ -29,7 +29,7 @@ export default function RootLayout({
       >
         {/* Header */}
         <header className="flex items-center justify-between px-6 py-4 bg-gray-900 shadow-md">
-          <h1 className="text-xl font-bold">SmartSolarLab</h1>
+          <h1 className="text-xl font-bold ">SmartSolarLab</h1>
           <nav className="flex gap-4 pr-10">
             <Link
               href="/"

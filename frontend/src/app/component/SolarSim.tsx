@@ -8,7 +8,7 @@ import { getSolarEstimate } from "../service/SolarEstimateParams";
 import InstallationSim from "./InstallationSim";
 import { PanelModel } from "./ModelPanel";
 interface SolarSimProps {
-  panels: number
+  panels: number;
 }
 
 const SolarSim = ({ panels }: SolarSimProps) => {
@@ -109,10 +109,29 @@ const SolarSim = ({ panels }: SolarSimProps) => {
         <h3 className="font-semibold text-zinc-800 dark:text-zinc-100 mb-2">
           Energía estimada
         </h3>
-        <p className="text-sm text-zinc-700 dark:text-zinc-300 mt-1">
-          {estimate.energiaDiaria
-            ? `${Number(estimate.energiaDiaria.toFixed(2)) * panelsCount} kWh`
-            : "Calculando..."}
+        <p
+          className="
+    relative text-sm mt-1
+    text-yellow-700 dark:text-yellow-200
+    transition-all duration-300
+    hover:text-yellow-600 dark:hover:text-yellow-100
+  "
+        >
+          <span
+            className="
+      absolute inset-0 rounded-md
+      bg-yellow-300 dark:bg-yellow-400
+      blur-md opacity-40
+      transition-all duration-300
+      hover:opacity-100 hover:blur-lg
+      pointer-events-none
+    "
+          />
+          <span className="relative z-10">
+            {estimate.energiaDiaria
+              ? `${Number(estimate.energiaDiaria.toFixed(2)) * panelsCount} kWh`
+              : "Calculando..."}
+          </span>
         </p>
       </div>
     </div>
